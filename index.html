@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Yummy Bootstrap Template - Index</title>
+  <title>Safe eats Bootstrap Template - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
+  
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -27,17 +27,10 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Yummy - v1.2.1
-  * Template URL: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
-
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
@@ -74,20 +67,16 @@
          
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
 		   <form id="form" role="search">
-		   <input type="checkbox" id="allergy1" name="allergy1" value="peanut">
-             <label for="allergy1"><i class="fa-regular fa-peanut"></i> Peanut</label>
-              <input type="checkbox" id="allergy2" name="allergy2" value="dairy">
+        <input type="checkbox" id="allergy1" name="allergy1" value="Vegan Options">
+        <label for="allergy1"> Vegan</label>
+              <input type="checkbox" id="allergy2" name="allergy2" value="Vegan Options">
              <label for="allergy2"> Dairy</label>
-			 <input type="checkbox" id="allergy3" name="allergy3" value="gluten">
+			 <input type="checkbox" id="allergy3" name="allergy3" value="Gluten Free Options">
              <label for="allergy3"> Gluten</label>
-			 <input type="checkbox" id="allergy4" name="allergy4" value="seafood">
-             <label for="allergy4"> Sea Food</label>
-			 <input type="checkbox" id="allergy5" name="allergy5" value="Eggs">
-             <label for="allergy5"> Eggs</label>
-					<input type="checkbox" id="allergy6" name="allergy6" value="soy">
-             <label for="allergy6"> Soy</label><br><br>
-			<input type="search" id="query" name="q" placeholder="Search..." class="btn-book-a-form" >
-             <a href="#book-a-table" class="btn-book-a-table"><span>Search</span></a>
+             <input type="checkbox" id="allergy4" name="allergy4" value="Vegetarian Friendly">
+             <label for="allergy4">Vegetarian</label><br><br>
+			<input type="search" id="query" name="q" placeholder="enter your City..." class="btn-book-a-form" >
+             <a id="search" class="btn-book-a-table" ><span>Search</span></a>
               </form>
             
             
@@ -233,7 +222,7 @@ who are on dietary restriction for other reasons too.
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="config.js"></script>
 </body>
 
 </html>

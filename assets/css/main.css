@@ -1581,7 +1581,7 @@ section {
   padding: 12px 36px;
   border-radius: 50px;
   transition: 0.5s;
-  color: #fff;
+  color: rgb(171, 26, 26);
   background: var(--color-light);
   box-shadow: 0 8px 28px rgba(206, 18, 18, 0.2);
 }
@@ -1632,14 +1632,16 @@ section {
 .footer {
   font-size: 14px;
   background-color: #1f1f24;
-  padding: 50px 0;
+  padding: 10px 50px 20px;
   color: rgba(255, 255, 255, 0.7);
+  text-align: center;
 }
 
 .footer .icon {
   margin-right: 15px;
   font-size: 24px;
   line-height: 0;
+  text-align: center;
 }
 
 .footer h4 {
@@ -1693,6 +1695,7 @@ section {
   color: rgba(255, 255, 255, 0.7);
   margin-right: 10px;
   transition: 0.3s;
+ position: center;
 }
 
 .footer .social-links a:hover {
@@ -1715,3 +1718,13 @@ section {
 .footer .credits a {
   color: #fff;
 }
+
+#restaurent_data {
+  flex: 1;
+  border: 1px solid black;
+  display: block;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+

@@ -49,14 +49,20 @@ $(document).ready(function(){
 				if(!!allergies.length){
 					for(let i=0;i<restaurent_data.data.length; i++){
 						if(!!restaurent_data.data[i].cuisine){
-							for( let j=0;j<allergies.length;j++){
-								for(let k=0;k<restaurent_data.data[i].cuisine.length; k++){
-									if(restaurent_data.data[i].cuisine[k].name.includes(allergies[j]) ){
-										filterData.push(restaurent_data.data[i]);
-										console.log(restaurent_data.data[i].cuisine[k],allergies[j],i,j,k);
+							for(let j=0;j<restaurent_data.data[i].cuisine.length; j++){
+								let push = true;
+								for( let k=0;k<allergies.length;k++){
+									if(!restaurent_data.data[i].cuisine[j].name.includes(allergies[k]) ){
+										push = false;
+										break;
 									}
 								}
+								if(!!push){
+									filterData.push(restaurent_data.data[i]);
+									//console.log(restaurent_data.data[i].cuisine[j],allergies[k],i,j,k);
+								}
 							}
+							
 	
 						}
 					}
@@ -80,24 +86,39 @@ $(document).ready(function(){
 		var restaurentData=localStorage.getItem("restaurent_data");
 		restaurentData = JSON.parse(restaurentData);
 		console.log(restaurentData);
-		var htmlData = "";
+		var htmlData = "<div class='main_block'>";
 		var defaultImg = "https://media-cdn.tripadvisor.com/media/photo-l/0c/e9/03/ef/photo9jpg.jpg";
 		var defaultName = "Chipotle"
-		for(i=0;i<restaurentData.length;i++){
-			htmlData= htmlData+ "<div class='inner' > ";
-			if (restaurentData[i].name) {
-				htmlData=htmlData+"<h1 >"+ restaurentData[i].name +" </h1>";
-			} else {
-				htmlData=htmlData+"<h1 >"+ defaultName +" </h1>";
+		if(!!restaurentData.length){
+			for(i=0;i<restaurentData.length;i++){
+				htmlData= htmlData+ "<div class='inner_block' > ";
+				htmlData = htmlData+ "<div class='left_block'><img src="+restaurentData[i].photo?.images?.small?.url+" alt="+defaultImg+" >"
+				htmlData = htmlData+ "<a class = 'website' id='navigateTo' href="+restaurentData[i].website+" target = '_blank' >Go To Website</a></div>"
+				htmlData = htmlData+ "<div class = 'middle_block'>";
+				if (restaurentData[i].name) {
+					htmlData=htmlData+"<h3 class='name'>"+ restaurentData[i].name +" </h3>";
+				} else {
+					htmlData=htmlData+"<h3 class = 'name'>"+ defaultName +" </h3>";
+				}
+				htmlData = htmlData +"<p class='street'>"+restaurentData[i].address_obj?.street1+"</p>";
+				htmlData = htmlData +"<p class='city'>"+restaurentData[i].address_obj?.city+"</p>";
+				htmlData = htmlData +"<p class='pin'>"+restaurentData[i].address_obj?.state +" "+restaurentData[i].address_obj?.postalcode+"</p>";
+				htmlData = htmlData +"<p class='contact'>"+restaurentData[i]?.phone +"|"+restaurentData[i]?.email+"</p>"
+				htmlData = htmlData+"</div>";
+				htmlData = htmlData+ "<div class = 'right_block'></div>"
+				htmlData = htmlData+"</div>";
 			}
-			htmlData = htmlData+ "<div><img src="+restaurentData[i].photo?.images?.small?.url+" alt="+defaultImg+"></div>";
-			htmlData = htmlData+"<p>"+restaurentData[i].address+"</p>";
-			htmldata = htmlData+"</div>";
+			htmlData = htmlData + "</div>";
+		}
+		else{
+			htmlData = "<h3 style='margin-top : 25px;'>No Restaurant Found</h3>";
 		}
 		document.getElementById("restaurent_data").innerHTML= htmlData;
 
 	};
+	$("#navigateTo").click(function navigateTo(){
+		window.open('', '_blank');
+
+	});
 	onload();
   });
-
-

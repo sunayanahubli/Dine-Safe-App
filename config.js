@@ -14,7 +14,7 @@ $(document).ready(function(){
 	
 		
 	});
-
+//calling API
 	function callApi(){
 		console.log("loading")
 		var location_id;
@@ -50,7 +50,7 @@ $(document).ready(function(){
 				"X-RapidAPI-Host": "travel-advisor.p.rapidapi.com"
 			}
 		};
-		
+		//after API call storing the entire data into filterData variable
 		$.ajax(restaurent_API).done(function (response) {
 			var restaurent_data = response;
 			console.log(response);
@@ -93,6 +93,7 @@ $(document).ready(function(){
 		});
 		
 	}
+	//displaying the data on sample inner html page from the stored data
 	function onload(){
 		var restaurentData=localStorage.getItem("restaurent_data");
 		restaurentData = JSON.parse(restaurentData);

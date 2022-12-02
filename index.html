@@ -60,7 +60,7 @@
     <div class="container">
       <div class="row justify-content-between gy-5">
         <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-          <h2 data-aos="fade-up">Enjoy Your Safe<br>Delicious Food</h2>
+          <h2 data-aos="fade-up">Enjoy Your Healthy<br>Delicious Food</h2>
          
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
 		   <form id="form" role="search">
@@ -72,7 +72,7 @@
              <label for="allergy3"> Gluten</label>
              <input type="checkbox" id="allergy4" name="allergy4" value="Vegetarian Friendly">
              <label for="allergy4">Vegetarian</label><br><br>
-			<input type="search" id="query" name="q" placeholder="Enter City..." class="btn-book-a-form" >
+			<input type="search" id="query" name="q" placeholder="enter your City..." class="btn-book-a-form" >
              <a id="search" class="btn-book-a-table" style="cursor: pointer;" ><span>Search</span></a>
               </form>
             
@@ -114,6 +114,7 @@ who are on dietary restriction for other reasons too.
 
               <div class="position-relative mt-4">
                 <img src="assets/img/about-2.jpg" class="img-fluid" alt="">
+                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
               </div>
             </div>
           </div>
@@ -131,20 +132,20 @@ who are on dietary restriction for other reasons too.
         </div>
         </div>
 
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form p-3 p-md-4">
+        <form action="https://sheetdb.io/api/v1/vaj2te1bhvjzv" method="post" id="sheetdb-form" role="form" class="form">
           <div class="row">
             <div class="col-xl-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              <input type="text" name="data[name]" class="form-control" id="name" placeholder="Your Name" required>
             </div>
             <div class="col-xl-6 form-group">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              <input type="email" class="form-control" name="data[email]" id="email" placeholder="Your Email" required>
             </div>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+            <input type="text" class="form-control" name="data[subject]" id="subject" placeholder="Subject" required>
           </div>
           <div class="form-group">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            <textarea class="form-control" name="data[message]" rows="5" placeholder="Message" required></textarea>
           </div>
           <div class="my-3">
             <div class="loading">Loading</div>
@@ -165,7 +166,7 @@ who are on dietary restriction for other reasons too.
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>DineSafe</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>SafeEats</span></strong>. All Rights Reserved
       </div>
       
     </div>
@@ -188,6 +189,22 @@ who are on dietary restriction for other reasons too.
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="config.js"></script>
+  <script>
+            var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code here
+            window.open('page2.html', '_blank');
+
+          });
+        });
+        </script>
 </body>
 
 </html>

@@ -201,7 +201,6 @@ var form = document.getElementById('sheetdb-form');
               response => response.json()
           ).then((html) => {
             // you can put any JS code here
-            window.open('page2.html', '_blank');
             var myWindow = window.open("", "MsgWindow", "width=200,height=100");
   myWindow.document.write("<p>Your message has been sent. Thank you!</p>");
             

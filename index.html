@@ -60,7 +60,7 @@
     <div class="container">
       <div class="row justify-content-between gy-5">
         <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-          <h2 data-aos="fade-up">Enjoy Your Healthy<br>Delicious Food</h2>
+          <h2 data-aos="fade-up">Enjoy Your Safe<br>Delicious Food</h2>
          
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
 		   <form id="form" role="search">
@@ -152,7 +152,7 @@ who are on dietary restriction for other reasons too.
             <div class="error-message"></div>
             <div class="sent-message">Your message has been sent. Thank you!</div>
           </div>
-          <div class="text-center"><button type="submit">Send Message</button></div>
+          <div class="text-center"><button type="submit" onclick="myFunction()">Send Message</button></div>
         </form>
         <!--End Contact Form -->
 
@@ -190,7 +190,8 @@ who are on dietary restriction for other reasons too.
   <script src="assets/js/main.js"></script>
   <script src="config.js"></script>
   <script>
-            var form = document.getElementById('sheetdb-form');
+  function myFunction() {
+var form = document.getElementById('sheetdb-form');
         form.addEventListener("submit", e => {
           e.preventDefault();
           fetch(form.action, {
@@ -201,9 +202,13 @@ who are on dietary restriction for other reasons too.
           ).then((html) => {
             // you can put any JS code here
             window.open('page2.html', '_blank');
+            var myWindow = window.open("", "MsgWindow", "width=200,height=100");
+  myWindow.document.write("<p>Your message has been sent. Thank you!</p>");
+            
 
           });
         });
+      }
         </script>
 </body>
 

@@ -26,7 +26,7 @@ $(document).ready(function(){
 			"url": "https://travel-advisor.p.rapidapi.com/locations/v2/auto-complete?query="+zipcode+"&lang=en_US&units=km",
 			"method": "GET",
 			"headers": {
-				"X-RapidAPI-Key": "327782d2dbmshdf7303c7e63dcabp1512d4jsndbb535c3e75a",
+				"X-RapidAPI-Key": "e3ce26784bmsh8e4f8ec4bc43e01p1594cbjsn70f53ce32ae1",
 				"X-RapidAPI-Host": "travel-advisor.p.rapidapi.com"
 			}
 		};
@@ -46,7 +46,7 @@ $(document).ready(function(){
 			"url": "https://travel-advisor.p.rapidapi.com/restaurants/list?location_id="+loc_id+"&restaurant_tagcategory=10591&restaurant_tagcategory_standalone=10591&currency=USD&lunit=km&limit=30&open_now=false&lang=en_US",
 			"method": "GET",
 			"headers": {
-				"X-RapidAPI-Key": "327782d2dbmshdf7303c7e63dcabp1512d4jsndbb535c3e75a",
+				"X-RapidAPI-Key": "e3ce26784bmsh8e4f8ec4bc43e01p1594cbjsn70f53ce32ae1",
 				"X-RapidAPI-Host": "travel-advisor.p.rapidapi.com"
 			}
 		};
